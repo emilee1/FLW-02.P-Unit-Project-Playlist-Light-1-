@@ -20,11 +20,16 @@ let userLink = document.querySelector(".display-link");
 
 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
-let imageArray = 
-let songNameArray = 
-  let songLinkArray = 
-  let artistArray = 
-
+let imageArray =[ 
+  "https://i.scdn.co/image/ab67616d0000b273923b933bf3a523a0aea17ff7","https://i.scdn.co/image/ab67616d0000b2739d28fd01859073a3ae6ea209","https://i1.sndcdn.com/artworks-TZvvoAsz61cW-0-t500x500.jpg","https://upload.wikimedia.org/wikipedia/en/5/50/Jus2_-_Focus.jpg" 
+  ];
+console.log(imageArray);
+let songNameArray = ["うずまき(Uzumaki)","Hype Boy", "Mascara","Focus On Me"];
+  let songLinkArray = ["https://www.youtube.com/watch?v=fYkShnaf454","https://www.youtube.com/watch?v=ghrlZIMDzbM","https://www.youtube.com/watch?v=XhCBruock0E","https://www.youtube.com/watch?v=uf27Hxrglrk"];
+  let artistArray = ["Machine Girl","Hype Boy","Mascara","Jus2"]
+console.log(artistArray);
+console.log(songLinkArray);
+console.log(songNameArray);
 
 
 //REFACTOR ARRAYS DAY 

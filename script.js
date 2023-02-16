@@ -20,12 +20,10 @@ let userLink = document.querySelector(".display-link");
 
 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
-let albums =[ 
-  "https://i.scdn.co/image/ab67616d0000b273923b933bf3a523a0aea17ff7","https://i.scdn.co/image/ab67616d0000b2739d28fd01859073a3ae6ea209","https://i1.sndcdn.com/artworks-TZvvoAsz61cW-0-t500x500.jpg","https://upload.wikimedia.org/wikipedia/en/5/50/Jus2_-_Focus.jpg" 
-  ];
-let songNameArray = ["うずまき(Uzumaki)","Hype Boy", "Mascara","Focus On Me"];
+let imageURL =["pics/uzumaki.jpeg", "pics/hype boy.jpeg", "pics/around the fur.webp", "pics/Jus2.jpg" ];
+let songNameArray = ["うずまき (Uzumaki)","Hype Boy", "Mascara","Focus On Me"];
   let songLinkArray = ["https://www.youtube.com/watch?v=fYkShnaf454","https://www.youtube.com/watch?v=ghrlZIMDzbM","https://www.youtube.com/watch?v=XhCBruock0E","https://www.youtube.com/watch?v=uf27Hxrglrk"];
-  let artistArray = ["Machine Girl","Hype Boy","Mascara","Jus2"]
+  let artistArray = ["Machine Girl","New Jeans","Deftones","Jus2"]
 
 
 
@@ -70,14 +68,24 @@ function emptyDisplay() {
 
 
 function displaySongInfo() {
-
 // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
 
-for (let index = 0; index < albums.length; index++){
-let album = albums[index];
-  userURL.insertAdjacentHTML("beforeend", `<p>${album}</p>`);
+for (let index = 0; index < imageURL.length; index++){
+let album = imageURL[index];
+  userURL.insertAdjacentHTML("beforeend", `<img src ="${album}">`);
 }
-
+for (let i = 0; i < songNameArray.length; i++){
+let songs = songNameArray[i];
+  userSong.insertAdjacentHTML("beforeend", `<p>${songs}</p>`);
+}
+for (let singer = 0; singer < artistArray.length; singer++){
+ let artist = artistArray[singer];
+  userArtist.insertAdjacentHTML("beforeend",`<p>${artist}</p>`);
+}
+for (let link = 0; link < songLinkArray.length; link++){
+  let song = songLinkArray[link];
+  userLink.insertAdjacentHTML("beforeend",`<a href="${song}">Listen Here!</a>`);
+}
 }
 
 

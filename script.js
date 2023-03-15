@@ -51,7 +51,7 @@ let Mascara = {
   songlink: "https://www.youtube.com/watch?v=ghrlZIMDzbM"
   };
 
-let Focus On Me = {
+let FocusOnMe = {
   imageURL: "pics/Jus2.jpg",
   songname: "Focus On Me", 
   artist: "Jus2",
@@ -66,7 +66,7 @@ let Flutter = {
 // task 13: inside each object, add key/value pairs to store the image url, song name, artist, and song link.
 
 // task 14: create an array that stores all of the objects.
-let Songs = [Uzumaki, hypeBoy, Mascara, Focus On Me, Julie];
+let Songs = [Uzumaki, hypeBoy, Mascara, FocusOnMe, Flutter];
 
 
 //REFACTOR LOOPS DAY 
@@ -83,18 +83,25 @@ let Songs = [Uzumaki, hypeBoy, Mascara, Focus On Me, Julie];
 function addSongInfo() {
 
 // task 9: declare a variable to save the user input of the image url. Declare three more variables that save user input: One for the song names, one for the artists, and a last one for the song links.
-let saveUrl = songLinkArray;
-let saveArtist = artistArray;
-let saveImage = imageURL;
-let saveName = songNameArray;
+// let saveUrl = songLinkArray;
+// let saveArtist = artistArray;
+// let saveImage = imageURL;
+// let saveName = songNameArray;
 
-// task 10: use `.push()` to add each input value to the correct array.
-  songLinkArray.push(saveUrl);
-  artistArray.push(saveArtist);
-  imageURL.push(saveImage);
-  songNameArray.push(saveName);
+// // task 10: use `.push()` to add each input value to the correct array.
+//   songLinkArray.push(saveUrl);
+//   artistArray.push(saveArtist);
+//   imageURL.push(saveImage);
+//   songNameArray.push(saveName);
   
-  console.log(saveArtist)
+//   console.log(saveArtist)
+  let userSong = { 
+  imageURL: image.value,
+  songname: songName.value,
+  artist: artist.value,
+  songlink: songLink.value 
+};
+  Songs.push(userSong);
 }
 
 
@@ -113,12 +120,30 @@ function emptyDisplay() {
 
 function displaySongInfo() {
 // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
+for (let index = 0; index < Songs.length; index++){
+  let song = Songs[index];  
+  userLink.insertAdjacentHTML("beforeend",`<a href="${song.songLink}">Listen Here!</a>`);
+userSong.insertAdjacentHTML("beforeend",`<p>${song.songname}</p>`);
+  userArtist.insertAdjacentHTML("beforeend",`<p>${song.artist}</p>`);
+  userURL.insertAdjacentHTML("beforeend",`<img src="${song.imageURL}">`);
+}
+}
+// for (let index = 0; index < addSongInfo.length; index++){
+// let album = addSongInfo[index];
+//   userURL.insertAdjacentHTML("beforeend", `<img src ="${album}">`);
+// }
+//   for (let i = 0; i < songNameArray.length; i++){
+// let songs = songNameArray[i];
+//   userSong.insertAdjacentHTML("beforeend", `<p>${songs}</p>`);
+// }
+// for (let singer = 0; singer < artistArray.length; singer++){
+//  let artist = artistArray[singer];
+//   userArtist.insertAdjacentHTML("beforeend",`<p>${artist}</p>`);
+// }
+// for (let link = 0; link < songLinkArray.length; link++){
+//   let song = songLinkArray[link];
+//   userLink.insertAdjacentHTML("beforeend",`<a href="${song}">Listen Here!</a>`);
 
-for (let index = 0; index < addSongInfo.length; index++){
-let album = addSongInfo[index];
-  userURL.insertAdjacentHTML("beforeend", `<img src ="${album}">`);
-}
-}
 
 
 
@@ -127,6 +152,10 @@ let album = addSongInfo[index];
 // click event to add and display songs
 add.onclick = function() {
   addSongInfo();
+  userURL.innerHTML="";
+  userSong.innerHTML="";
+  userArtist.innerHTML="";
+  userLink.innerHTML="";
   displaySongInfo();
 };
 
